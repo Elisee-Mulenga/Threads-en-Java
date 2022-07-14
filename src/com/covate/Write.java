@@ -1,6 +1,9 @@
 package com.covate;
 
-public class Write extends Thread {
+import static java.lang.Thread.sleep;
+
+/*public class Write extends Thread{}*/
+public class Write implements Runnable {
     private String texte;
     private int nbre;
     private long attente;
