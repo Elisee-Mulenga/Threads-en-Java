@@ -1,10 +1,14 @@
 package com.covate;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Write e1 = new Write("bonjour ", 10,5);
-        Write e2 = new Write("Bonsoir ", 12,14);
-        Write e3 = new Write("\n", 6,18);
+        Scanner sc = new Scanner(System.in);
+
+        Interruption e1 = new Interruption("bonjour ", 10);
+        Interruption e2 = new Interruption("Bonsoir ", 12);
+        Interruption e3 = new Interruption("\n", 6);
         /* Avec la methode Thread*/
 //        e1.start();
 //        e2.start();
@@ -16,6 +20,15 @@ public class Main {
         t1.start();
         Thread t3 = new Thread(e3);
         t1.start();
+
+        sc.nextLine();
+        e1.interrupt();
+        System.out.println("***** PREMIERE INTERRUPTION ********");
+
+        sc.nextLine();
+        e2.interrupt();
+        e3.interrupt();
+        System.out.println("***** DEUXIEME INTERRUPTION ********");
     }
 }
 
