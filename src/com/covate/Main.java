@@ -14,21 +14,28 @@ public class Main {
 //        e2.start();
 //        e3.start();
         /* Avec la methode runnable*/
-        Thread t1 = new Thread(e1);
-        t1.start();
-        Thread t2 = new Thread(e2);
-        t1.start();
-        Thread t3 = new Thread(e3);
-        t1.start();
+//        Thread t1 = new Thread(e1);
+//        t1.start();
+//        Thread t2 = new Thread(e2);
+//        t1.start();
+//        Thread t3 = new Thread(e3);
+//        t1.start();
+//
+//        sc.nextLine();
+//        e1.interrupt();
+//        System.out.println("***** PREMIERE INTERRUPTION ********");
+//
+//        sc.nextLine();
+//        e2.interrupt();
+//        e3.interrupt();
+//        System.out.println("***** DEUXIEME INTERRUPTION ********");
 
+        /* Avec la methode Daemon*/
+        e1.setDaemon(true);e1.start();
+        e2.setDaemon(true);e2.start();
+        e3.setDaemon(true);e3.start();
+        /* cette ligne rend le programme executable*/
         sc.nextLine();
-        e1.interrupt();
-        System.out.println("***** PREMIERE INTERRUPTION ********");
-
-        sc.nextLine();
-        e2.interrupt();
-        e3.interrupt();
-        System.out.println("***** DEUXIEME INTERRUPTION ********");
     }
 }
 
